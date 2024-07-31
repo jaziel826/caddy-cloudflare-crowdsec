@@ -19,7 +19,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: jaziel826
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: build and push docker image to registry
         uses: docker/build-push-action@v5
