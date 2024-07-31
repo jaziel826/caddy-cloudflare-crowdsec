@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
 
@@ -15,6 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag caddy-super:$(date +%s)
+      run: docker build . --file Dockerfile --tag caddy-super:latest
     - name: Push the Docker image
-      run: docker login -u jaziel826 -p ${{ secrets.DOCKER_TOKEN }} && docker push jaziel826/caddy-super:$(date +%s)
+      run: docker login -u jaziel826 -p ${{ secrets.DOCKER_TOKEN }} && docker push jaziel826/caddy-super:latest
