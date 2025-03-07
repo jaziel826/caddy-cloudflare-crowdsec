@@ -4,7 +4,7 @@
 
 
 # https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
-ARG CADDY_VERSION=2.8.4
+ARG CADDY_VERSION=2.9.1
 
 FROM caddy:${CADDY_VERSION}-builder-alpine AS builder
 
