@@ -20,9 +20,10 @@ RUN xcaddy build \
    # --with github.com/caddyserver/certmagic@b9399eadfbe7ac3092f4e65d45284b3aabe514f8 \
    # --with github.com/caddyserver/caddy@9becf61a9f5bafb88a15823ce80c1325d3a30a4f
     
-FROM caddy:${CADDY_VERSION}
+FROM caddy:${CADDY_VERSION} AS caddy
 
 WORKDIR /
 
-COPY --from=builder /usr/bin/caddy
+COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+
 
