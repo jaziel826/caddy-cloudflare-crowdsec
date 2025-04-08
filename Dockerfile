@@ -14,10 +14,12 @@ RUN xcaddy build \
     --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
     --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main \
     --with github.com/caddy-dns/cloudflare \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip
-
+    --with github.com/WeidiDeng/caddy-cloudflare-ip 
+    
 FROM caddy:${CADDY_VERSION} AS caddy
 
 WORKDIR /
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+
