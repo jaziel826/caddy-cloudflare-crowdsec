@@ -15,7 +15,7 @@ RUN xcaddy build \
     --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
     --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main \
     --with github.com/WeidiDeng/caddy-cloudflare-ip \
-    --with github.com/caddyserver/certmagic@master \
+    --with github.com/caddyserver/certmagic@master 
   #  --with github.com/caddyserver/caddy@master \
    # --with github.com/caddyserver/certmagic@b9399eadfbe7ac3092f4e65d45284b3aabe514f8 \
    # --with github.com/caddyserver/caddy@9becf61a9f5bafb88a15823ce80c1325d3a30a4f
