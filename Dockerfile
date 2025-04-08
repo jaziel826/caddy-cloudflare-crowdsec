@@ -24,5 +24,5 @@ FROM caddy:${CADDY_VERSION}
 
 WORKDIR /
 
-COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+COPY --from=builder /usr/bin/caddy
 
