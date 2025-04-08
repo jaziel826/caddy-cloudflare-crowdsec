@@ -21,6 +21,6 @@ FROM caddy:${CADDY_VERSION} AS caddy
 WORKDIR /
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
-COPY config/caddy /etc/caddy
+#COPY config/caddy /etc/caddy
 #CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
 
