@@ -9,12 +9,12 @@ ARG CADDY_VERSION=2.9.1
 FROM caddy:${CADDY_VERSION}-builder-alpine AS builder
 
 RUN xcaddy build \
-    --with github.com/caddy-dns/cloudflare \
+    --with github.com/caddy-dns/cloudflare@188b4850c0f2f5565a6310810c936ea960e2210f \
     --with github.com/mholt/caddy-l4 \
     --with github.com/caddyserver/transform-encoder \
     --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
     --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip@188b4850c0f2f5565a6310810c936ea960e2210f \
+    --with github.com/WeidiDeng/caddy-cloudflare-ip \
     #--with github.com/caddyserver/certmagic@master \
   #  --with github.com/caddyserver/caddy@master \
    # --with github.com/caddyserver/certmagic@b9399eadfbe7ac3092f4e65d45284b3aabe514f8 \
