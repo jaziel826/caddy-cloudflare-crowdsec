@@ -18,7 +18,7 @@ RUN xcaddy build \
     
 FROM caddy:${CADDY_VERSION} AS caddy
 
-#WORKDIR /
+WORKDIR /
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 #COPY config/caddy /etc/caddy
