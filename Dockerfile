@@ -14,10 +14,10 @@ RUN xcaddy build \
     --with github.com/caddyserver/transform-encoder \
     --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
     --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip \
-    --with github.com/caddyserver/certmagic@master \
+    --with github.com/WeidiDeng/caddy-cloudflare-ip@188b4850c0f2f5565a6310810c936ea960e2210f \
+    #--with github.com/caddyserver/certmagic@master \
   #  --with github.com/caddyserver/caddy@master \
-    --with github.com/caddyserver/certmagic@b9399eadfbe7ac3092f4e65d45284b3aabe514f8 \
+   # --with github.com/caddyserver/certmagic@b9399eadfbe7ac3092f4e65d45284b3aabe514f8 \
    # --with github.com/caddyserver/caddy@9becf61a9f5bafb88a15823ce80c1325d3a30a4f
     
 FROM caddy:${CADDY_VERSION} AS caddy
