@@ -13,7 +13,8 @@ RUN xcaddy build \
     --with github.com/caddyserver/transform-encoder \
     --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
     --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main \
-    --with github.com/caddy-dns/cloudflare
+    --with github.com/caddy-dns/cloudflare \
+    --with github.com/WeidiDeng/caddy-cloudflare-ip
 
 FROM caddy:${CADDY_VERSION} AS caddy
 
