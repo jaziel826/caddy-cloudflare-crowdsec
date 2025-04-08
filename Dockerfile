@@ -6,7 +6,7 @@
 # https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
 ARG CADDY_VERSION=2.9.1
 
-FROM caddy:${CADDY_VERSION}-builder AS builder
+FROM caddy:${CADDY_VERSION}-builder-alpine AS builder
 
 RUN xcaddy build \
   #  --with github.com/mholt/caddy-l4 \
@@ -18,9 +18,9 @@ RUN xcaddy build \
     
 FROM caddy:${CADDY_VERSION} AS caddy
 
-WORKDIR /
+#WORKDIR /
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 #COPY config/caddy /etc/caddy
-#CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
 
